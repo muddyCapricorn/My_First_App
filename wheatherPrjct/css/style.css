@@ -164,3 +164,10 @@ video {
   z-index: -1;
   opacity: 0.5;
 }
+#sourcelink {
+  font-size: 15px;
+}
+
+#sourcelink a {
+  text-decoration: none;
+}
