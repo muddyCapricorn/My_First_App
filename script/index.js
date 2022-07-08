@@ -30,15 +30,7 @@ function showWeather(response) {
   document.querySelector(".today").innerHTML = formatDate(
     response.data.dt * 1000
   );
-  console.log(response.data);
 
-  //document.querySelector("#min-today").innerHTML = `${Math.round(
-  //response.data.main.temp_min
-  //)}°`;
-
-  //document.querySelector("#max-today").innerHTML = `/${Math.round(
-  // response.data.main.temp_max
-  //)}°`;
 }
 
 function searchCity(city) {
