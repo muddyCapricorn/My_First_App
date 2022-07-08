@@ -30,7 +30,12 @@ function showWeather(response) {
   document.querySelector(".today").innerHTML = formatDate(
     response.data.dt * 1000
   );
-
+  document
+    .querySelector("#emoji-now")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 
 function searchCity(city) {

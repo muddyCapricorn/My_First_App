@@ -65,8 +65,9 @@ i {
   color: rgb(88, 93, 106);
 }
 .col-5 {
-  margin-left: 50px;
+  margin-left: 5px;
 }
+
 #now° {
   text-align: left;
   font-size: 68px;
@@ -74,11 +75,16 @@ i {
   margin-bottom: 30px;
   margin-top: 37px;
 }
+#emoji-now {
+  font-size: 20px;
+}
 p.choose {
   font-size: 18 px;
   display: inline;
   vertical-align: 40px;
-  padding-left: 30px;
+}
+p.choose a {
+  text-decoration: none;
 }
 #tip {
   font-size: 18px;
