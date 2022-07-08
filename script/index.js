@@ -1,21 +1,18 @@
-let newDate = new Date();
-let weekend = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+function formatDate(timestamp) {
+  let newDate = new Date(timestamp);
+  let weekend = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-let dayWeekend = weekend[newDate.getDay()];
-function currentM() {
+  let dayWeekend = weekend[newDate.getDay()];
+
   let m = newDate.getMinutes();
   if (m < 10) {
-    return `0${m}`;
-  } else {
-    return m;
+    m = `0${m}`;
   }
+
+  let time = `${newDate.getHours()}:${m}`;
+
+  return `${dayWeekend}  <br/> ${time}`;
 }
-let minute = currentM();
-
-let time = `${newDate.getHours()}:${minute}`;
-
-let today = document.querySelector(".today");
-today.innerHTML = `${dayWeekend}  <br/> ${time}`;
 
 function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
@@ -30,6 +27,11 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
   )} km/h`;
+  document.querySelector(".today").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
+  console.log(response.data);
+
   //document.querySelector("#min-today").innerHTML = `${Math.round(
   //response.data.main.temp_min
   //)}°`;
@@ -38,6 +40,7 @@ function showWeather(response) {
   // response.data.main.temp_max
   //)}°`;
 }
+
 function searchCity(city) {
   let apiKey = "0a016ab1d0d641ea3159c73766f38d70";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
