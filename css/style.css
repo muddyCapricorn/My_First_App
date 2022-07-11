@@ -86,6 +86,17 @@ p.choose {
 p.choose a {
   text-decoration: none;
 }
+p.choose a:hover {
+  color: rgb(88, 93, 106);
+}
+.active {
+  color: rgb(88, 93, 106);
+  cursor: default;
+}
+.active:hover {
+  color: rgb(88, 93, 106);
+}
+
 #tip {
   font-size: 18px;
   margin-top: 40px;
